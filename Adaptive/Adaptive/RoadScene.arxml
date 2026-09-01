@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='utf-8'?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00049.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>Services</SHORT-NAME>
+      <ELEMENTS>
+        <AR-PACKAGE>
+          <SHORT-NAME>ServiceInterfaces</SHORT-NAME>
+          <ELEMENTS>
+            <SERVICE-INTERFACE>
+              <SHORT-NAME>RoadScene</SHORT-NAME>
+              <MAJOR-VERSION>3</MAJOR-VERSION>
+              <MINOR-VERSION>7</MINOR-VERSION>
+              <FIELDS>
+                <FIELD>
+                  <SHORT-NAME>SceneSummary</SHORT-NAME>
+                  <HAS-GETTER>true</HAS-GETTER>
+                  <HAS-NOTIFIER>true</HAS-NOTIFIER>
+                  <HAS-SETTER>false</HAS-SETTER>
+                </FIELD>
+              </FIELDS>
+              <METHODS>
+                <CLIENT-SERVER-OPERATION>
+                  <SHORT-NAME>QueryObjects</SHORT-NAME>
+                  <ARGUMENTS>
+                    <ARGUMENT-DATA-PROTOTYPE>
+                      <SHORT-NAME>region</SHORT-NAME>
+                      <DIRECTION>IN</DIRECTION>
+                    </ARGUMENT-DATA-PROTOTYPE>
+                    <ARGUMENT-DATA-PROTOTYPE>
+                      <SHORT-NAME>matching_objects</SHORT-NAME>
+                      <TYPE-TREF DEST="APPLICATION-ARRAY-DATA-TYPE">/ApplicationDataTypes/matching_objects_16_array</TYPE-TREF>
+                      <DIRECTION>OUT</DIRECTION>
+                    </ARGUMENT-DATA-PROTOTYPE>
+                  </ARGUMENTS>
+                </CLIENT-SERVER-OPERATION>
+              </METHODS>
+              <EVENTS>
+                <VARIABLE-DATA-PROTOTYPE>
+                  <SHORT-NAME>ObjectBatchUpdated</SHORT-NAME>
+                </VARIABLE-DATA-PROTOTYPE>
+                <VARIABLE-DATA-PROTOTYPE>
+                  <SHORT-NAME>LaneStateChanged</SHORT-NAME>
+                </VARIABLE-DATA-PROTOTYPE>
+              </EVENTS>
+            </SERVICE-INTERFACE>
+          </ELEMENTS>
+        </AR-PACKAGE>
+      </ELEMENTS>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

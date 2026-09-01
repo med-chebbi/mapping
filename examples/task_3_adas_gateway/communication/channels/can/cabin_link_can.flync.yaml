@@ -1,0 +1,29 @@
+name: CabinLinkCAN
+description: Comfort-domain classical CAN network.
+version: "1.4"
+baud_rate: 250000
+frames:
+  - name: CabinClimateFrame
+    type: can
+    length: 8
+    can_id: 0x461
+    id_format: standard_11bit
+    packed_pdus:
+      - pdu_ref: CabinClimatePDU
+        bit_position: 0
+    timing:
+      cyclic_timings:
+        - cycle: 0.025
+      event_timings: []
+  - name: GatewayCabinFrame
+    type: can
+    length: 8
+    can_id: 0x4A2
+    id_format: standard_11bit
+    packed_pdus:
+      - pdu_ref: GatewayCabinPDU
+        bit_position: 0
+    timing:
+      cyclic_timings:
+        - cycle: 0.050
+      event_timings: []

@@ -1,0 +1,9 @@
+release:
+  version_schema: semver
+  version: 3.0.0
+author: Network_Architecture_Team
+compatible_flync_version:
+  version_schema: semver
+  version: 0.11.0
+oem: GenericMobility
+platform: Task3_Hybrid_Service_Network

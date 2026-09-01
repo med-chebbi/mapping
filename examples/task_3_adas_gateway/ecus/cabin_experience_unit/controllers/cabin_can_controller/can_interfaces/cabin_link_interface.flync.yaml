@@ -1,0 +1,7 @@
+bus_ref: CabinLinkCAN
+sender_frames:
+  - bus_ref: CabinLinkCAN
+    frame_ref: 0x461
+receiver_frames:
+  - bus_ref: CabinLinkCAN
+    frame_ref: 0x4A2

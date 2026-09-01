@@ -1,0 +1,40 @@
+meta:
+  author: Adaptive_Perception_Team
+  compatible_flync_version:
+    version_schema: semver
+    version: 0.11.0
+  target_system: adaptive_linux
+name: perception_switch
+ports:
+  - name: perception_switch_external
+    silicon_port_no: 4
+    default_vlan_id: 73
+    mii_config:
+      type: sgmii
+      speed: 1000
+      mode: mac
+  - name: perception_switch_host
+    silicon_port_no: 9
+    default_vlan_id: 91
+    mii_config:
+      type: sgmii
+      speed: 1000
+      mode: mac
+vlans:
+  - name: SceneVLAN
+    id: 73
+    default_priority: 5
+    ports:
+      - perception_switch_external
+      - perception_switch_host
+    multicast:
+      - address: 239.23.73.1
+        ports:
+          - perception_switch_external
+          - perception_switch_host
+  - name: ComfortVLAN
+    id: 91
+    default_priority: 2
+    ports:
+      - perception_switch_external
+      - perception_switch_host

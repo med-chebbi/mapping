@@ -1,0 +1,40 @@
+profiles:
+  - profile_id: rapid_scene_event
+    type: event
+    debounce: 35
+    max_retention: 7
+  - profile_id: scene_query_method
+    type: method
+    req_debounce: 45
+    req_max_retention: 12
+    res_max_retention: 18
+  - profile_id: summary_field_profile
+    type: field
+    getter_req_debounce: 55
+    getter_req_max_retention: 11
+    getter_res_max_retention: 13
+    setter_req_debounce: 60
+    setter_req_max_retention: 14
+    setter_res_max_retention: 16
+    notifier_debounce: 40
+    notifier_max_retention: 9
+defaults:
+  - profile_id: event_default
+    type: event
+    debounce: 120
+    max_retention: 15
+  - profile_id: method_default
+    type: method
+    req_debounce: 130
+    req_max_retention: 20
+    res_max_retention: 25
+  - profile_id: field_default
+    type: field
+    getter_req_debounce: 140
+    getter_req_max_retention: 21
+    getter_res_max_retention: 22
+    setter_req_debounce: 145
+    setter_req_max_retention: 23
+    setter_res_max_retention: 24
+    notifier_debounce: 110
+    notifier_max_retention: 19

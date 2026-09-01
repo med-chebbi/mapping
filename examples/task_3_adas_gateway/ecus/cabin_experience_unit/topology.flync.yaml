@@ -1,0 +1,5 @@
+connections:
+  - type: ecu_port_to_controller_interface
+    id: cabin_port_to_service_interface
+    ecu_port: cabin_service_port
+    controller_interface: cabin_diagnostics_interface

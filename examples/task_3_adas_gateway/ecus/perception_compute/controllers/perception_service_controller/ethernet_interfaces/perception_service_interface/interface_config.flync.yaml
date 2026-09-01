@@ -1,0 +1,18 @@
+mac_address: 02:33:73:00:00:20
+mii_config:
+  type: sgmii
+  speed: 1000
+  mode: phy
+virtual_interfaces:
+  - name: perception_scene_vlan
+    vlanid: 73
+    addresses:
+      - address: 172.23.73.20
+        ipv4netmask: 255.255.255.0
+    multicast:
+      - 239.23.73.1
+  - name: perception_comfort_vlan
+    vlanid: 91
+    addresses:
+      - address: 172.23.91.20
+        ipv4netmask: 255.255.255.0

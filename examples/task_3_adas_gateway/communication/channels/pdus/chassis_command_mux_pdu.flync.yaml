@@ -1,0 +1,49 @@
+name: ChassisCommandMuxPDU
+type: multiplexed
+length: 8
+selector_signal:
+  bit_position: 0
+  endianness: LE
+  signal:
+    name: ChassisCommandSelector
+    bit_length: 4
+    data_type: uint8
+mux_groups:
+  - selector_value: 0
+    pdu:
+      name: SteeringCommandVariant
+      type: standard
+      length: 8
+      signals:
+        - bit_position: 8
+          endianness: LE
+          signal:
+            name: RequestedSteeringAngle
+            bit_length: 16
+            data_type: int16
+            factor: 0.1
+            unit: deg
+        - bit_position: 24
+          endianness: LE
+          signal:
+            name: SteeringCommandCounter
+            bit_length: 8
+            data_type: uint8
+  - selector_value: 1
+    pdu:
+      name: DampingCommandVariant
+      type: standard
+      length: 8
+      signals:
+        - bit_position: 8
+          endianness: LE
+          signal:
+            name: RequestedDamping
+            bit_length: 16
+            data_type: uint16
+        - bit_position: 24
+          endianness: LE
+          signal:
+            name: DampingMode
+            bit_length: 8
+            data_type: uint8

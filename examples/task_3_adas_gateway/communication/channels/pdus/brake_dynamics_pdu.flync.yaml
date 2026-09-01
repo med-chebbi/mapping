@@ -1,0 +1,26 @@
+name: BrakeDynamicsPDU
+type: standard
+length: 8
+signals:
+  - bit_position: 0
+    endianness: LE
+    signal:
+      name: WheelSpeedMean
+      bit_length: 16
+      data_type: uint16
+      factor: 0.02
+      unit: km/h
+  - bit_position: 16
+    endianness: LE
+    signal:
+      name: BrakePressure
+      bit_length: 16
+      data_type: uint16
+      factor: 0.1
+      unit: bar
+  - bit_position: 32
+    endianness: LE
+    signal:
+      name: StabilityState
+      bit_length: 8
+      data_type: uint8

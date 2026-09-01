@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='utf-8'?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00049.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>Services</SHORT-NAME>
+      <ELEMENTS>
+        <AR-PACKAGE>
+          <SHORT-NAME>ServiceInterfaces</SHORT-NAME>
+          <ELEMENTS>
+            <SERVICE-INTERFACE>
+              <SHORT-NAME>CabinOrchestration</SHORT-NAME>
+              <MAJOR-VERSION>2</MAJOR-VERSION>
+              <MINOR-VERSION>4</MINOR-VERSION>
+              <FIELDS>
+                <FIELD>
+                  <SHORT-NAME>ComfortMode</SHORT-NAME>
+                  <HAS-GETTER>true</HAS-GETTER>
+                  <HAS-NOTIFIER>true</HAS-NOTIFIER>
+                  <HAS-SETTER>true</HAS-SETTER>
+                </FIELD>
+              </FIELDS>
+              <METHODS>
+                <CLIENT-SERVER-OPERATION>
+                  <SHORT-NAME>ApplyComfortPreset</SHORT-NAME>
+                  <ARGUMENTS>
+                    <ARGUMENT-DATA-PROTOTYPE>
+                      <SHORT-NAME>preset</SHORT-NAME>
+                      <TYPE-TREF DEST="APPLICATION-PRIMITIVE-DATA-TYPE">/ApplicationDataTypes/preset</TYPE-TREF>
+                      <DIRECTION>IN</DIRECTION>
+                    </ARGUMENT-DATA-PROTOTYPE>
+                  </ARGUMENTS>
+                </CLIENT-SERVER-OPERATION>
+              </METHODS>
+              <EVENTS>
+                <VARIABLE-DATA-PROTOTYPE>
+                  <SHORT-NAME>ComfortSnapshotChanged</SHORT-NAME>
+                </VARIABLE-DATA-PROTOTYPE>
+              </EVENTS>
+            </SERVICE-INTERFACE>
+          </ELEMENTS>
+        </AR-PACKAGE>
+      </ELEMENTS>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

@@ -1,0 +1,9 @@
+connections:
+  - type: ecu_port_to_ecu_port
+    id: gateway_to_perception_link
+    ecu1_port: domain_gateway_eth_port
+    ecu2_port: perception_compute_eth_port
+  - type: ecu_port_to_ecu_port
+    id: brake_to_cabin_service_link
+    ecu1_port: brake_service_port
+    ecu2_port: cabin_service_port

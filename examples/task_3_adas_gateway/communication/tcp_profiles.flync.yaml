@@ -1,0 +1,11 @@
+tcp_profiles:
+  - tcp_profile_id: 41
+    nagle: true
+    keepalive_enabled: true
+    keepidle: 17
+    keepcount: 5
+    keepintvl: 4
+    user_timeout: 36
+    congestion_avoidance: bbr
+    tcp_maxseg: 1380
+    tcp_syncnt: 4

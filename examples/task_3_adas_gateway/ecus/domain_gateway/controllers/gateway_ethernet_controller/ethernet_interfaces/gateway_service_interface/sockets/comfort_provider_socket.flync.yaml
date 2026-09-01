@@ -1,0 +1,17 @@
+vlan_id: 91
+sockets:
+  - name: cabin_orchestration_provider
+    endpoint_address: 172.23.91.10
+    endpoint_type: unicast
+    port_no: 31700
+    protocol: udp
+    deployments:
+      - deployment_type: someip_provider
+        service: 0x0742
+        instance_id: 0x42
+        major_version: 2
+        minor_version: 4
+        provided_eventgroups:
+          - ComfortTelemetryGroup
+          - ComfortControlGroup
+        someip_sd_timings_profile: task3_server_profile

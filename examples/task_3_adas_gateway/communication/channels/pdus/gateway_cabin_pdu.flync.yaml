@@ -1,0 +1,22 @@
+name: GatewayCabinPDU
+type: standard
+length: 8
+signals:
+  - bit_position: 0
+    endianness: LE
+    signal:
+      name: AmbientProfileIndex
+      bit_length: 8
+      data_type: uint8
+  - bit_position: 8
+    endianness: LE
+    signal:
+      name: GatewayAliveCounter
+      bit_length: 8
+      data_type: uint8
+  - bit_position: 16
+    endianness: LE
+    signal:
+      name: CabinEnergyBudget
+      bit_length: 32
+      data_type: uint32

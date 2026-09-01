@@ -1,0 +1,5 @@
+connections:
+  - type: ecu_port_to_controller_interface
+    id: brake_port_to_service_interface
+    ecu_port: brake_service_port
+    controller_interface: brake_diagnostics_interface

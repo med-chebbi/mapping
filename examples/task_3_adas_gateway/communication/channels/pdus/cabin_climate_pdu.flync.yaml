@@ -1,0 +1,24 @@
+name: CabinClimatePDU
+type: standard
+length: 8
+signals:
+  - bit_position: 0
+    endianness: LE
+    signal:
+      name: RequestedCabinTemperature
+      bit_length: 16
+      data_type: int16
+      factor: 0.1
+      unit: degC
+  - bit_position: 16
+    endianness: LE
+    signal:
+      name: BlowerLevel
+      bit_length: 8
+      data_type: uint8
+  - bit_position: 24
+    endianness: LE
+    signal:
+      name: SeatOccupancyMask
+      bit_length: 32
+      data_type: uint32

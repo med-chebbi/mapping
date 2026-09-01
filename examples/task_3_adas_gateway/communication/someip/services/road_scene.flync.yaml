@@ -1,0 +1,147 @@
+meta:
+  author: Perception_Platform_Team
+  compatible_flync_version:
+    version_schema: semver
+    version: 0.11.0
+name: RoadScene
+id: 0x0631
+major_version: 3
+minor_version: 7
+fields:
+  - &scene_summary
+    name: SceneSummary
+    notifier_id: 0x8713
+    getter_id: 0x0313
+    reliable: true
+    someip_timing: summary_field_profile
+    parameters:
+      - name: summary
+        datatype:
+          type: struct
+          name: SceneSummaryType
+          members:
+            - type: uint16
+              member_name: object_count
+            - type: enum
+              member_name: dominant_object_type
+              base_type:
+                type: uint8
+              entries:
+                - value: 0
+                  name: unknown
+                - value: 1
+                  name: vehicle
+                - value: 2
+                  name: pedestrian
+            - type: uint8
+              member_name: quality
+events:
+  - &object_batch
+    name: ObjectBatchUpdated
+    id: 0x8711
+    reliable: false
+    someip_timing: rapid_scene_event
+    parameters:
+      - name: objects
+        datatype:
+          type: array
+          name: ObjectListType
+          dimensions:
+            - kind: dynamic
+              length_of_length_field: 16
+              lower_limit: 0
+              upper_limit: 32
+          element_type:
+            type: struct
+            name: ObjectInfoType
+            members:
+              - type: uint32
+                member_name: object_id
+              - type: enum
+                member_name: object_type
+                base_type:
+                  type: uint8
+                entries:
+                  - value: 0
+                    name: unknown
+                  - value: 1
+                    name: vehicle
+                  - value: 2
+                    name: pedestrian
+              - type: uint8
+                member_name: confidence
+              - type: struct
+                name: PositionType
+                member_name: position
+                members:
+                  - type: float32
+                    member_name: x
+                  - type: float32
+                    member_name: y
+  - &lane_state
+    name: LaneStateChanged
+    id: 0x8712
+    reliable: true
+    parameters:
+      - name: lane_state
+        datatype:
+          type: enum
+          name: LaneStateType
+          base_type:
+            type: uint8
+          entries:
+            - value: 0
+              name: unavailable
+            - value: 1
+              name: detected
+            - value: 2
+              name: crossing
+eventgroups:
+  - name: ObjectUpdatesGroup
+    id: 0x31
+    events:
+      - *object_batch
+  - name: SceneStateGroup
+    id: 0x32
+    events:
+      - *lane_state
+      - *scene_summary
+methods:
+  - name: QueryObjects
+    type: request_response
+    id: 0x0311
+    reliable: true
+    someip_timing: scene_query_method
+    input_parameters:
+      - name: region
+        datatype:
+          type: struct
+          name: QueryRegionType
+          members:
+            - type: struct
+              name: PositionType
+              member_name: center
+              members:
+                - type: float32
+                  member_name: x
+                - type: float32
+                  member_name: y
+            - type: uint16
+              member_name: radius_m
+    output_parameters:
+      - name: matching_objects
+        datatype:
+          type: array
+          name: QueryResultListType
+          dimensions:
+            - kind: dynamic
+              length_of_length_field: 16
+              upper_limit: 16
+          element_type:
+            type: struct
+            name: QueryResultType
+            members:
+              - type: uint32
+                member_name: object_id
+              - type: uint8
+                member_name: confidence

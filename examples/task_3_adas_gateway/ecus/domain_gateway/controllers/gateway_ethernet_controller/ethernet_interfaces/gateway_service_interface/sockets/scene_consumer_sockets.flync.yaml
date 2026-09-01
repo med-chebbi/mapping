@@ -1,0 +1,29 @@
+vlan_id: 73
+sockets:
+  - name: road_scene_consumer_udp
+    endpoint_address: 172.23.73.10
+    endpoint_type: unicast
+    port_no: 31600
+    protocol: udp
+    deployments:
+      - deployment_type: someip_consumer
+        service: 0x0631
+        instance_id: 0x31
+        major_version: 3
+        consumed_eventgroups:
+          - ObjectUpdatesGroup
+        someip_sd_timings_profile: task3_client_profile
+  - name: road_scene_consumer_tcp
+    endpoint_address: 172.23.73.10
+    endpoint_type: unicast
+    port_no: 31601
+    protocol: tcp
+    tcp_profile: 41
+    deployments:
+      - deployment_type: someip_consumer
+        service: 0x0631
+        instance_id: 0x31
+        major_version: 3
+        consumed_eventgroups:
+          - SceneStateGroup
+        someip_sd_timings_profile: task3_client_profile

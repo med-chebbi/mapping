@@ -1,0 +1,80 @@
+meta:
+  author: Comfort_Domain_Team
+  compatible_flync_version:
+    version_schema: semver
+    version: 0.11.0
+name: CabinOrchestration
+id: 0x0742
+major_version: 2
+minor_version: 4
+fields:
+  - &comfort_mode
+    name: ComfortMode
+    notifier_id: 0x8822
+    getter_id: 0x0422
+    setter_id: 0x0423
+    reliable: false
+    parameters:
+      - name: mode
+        datatype:
+          type: struct
+          name: ComfortModeType
+          members:
+            - type: enum
+              member_name: profile
+              base_type:
+                type: uint8
+              entries:
+                - value: 0
+                  name: neutral
+                - value: 1
+                  name: relaxation
+                - value: 2
+                  name: focus
+            - type: int16
+              member_name: temperature_tenth_deg
+events:
+  - &comfort_snapshot
+    name: ComfortSnapshotChanged
+    id: 0x8821
+    reliable: false
+    parameters:
+      - name: snapshot
+        datatype:
+          type: struct
+          name: ComfortSnapshotType
+          members:
+            - type: int16
+              member_name: cabin_temperature
+            - type: uint8
+              member_name: blower_level
+            - type: uint32
+              member_name: occupancy_mask
+eventgroups:
+  - name: ComfortTelemetryGroup
+    id: 0x41
+    events:
+      - *comfort_snapshot
+  - name: ComfortControlGroup
+    id: 0x42
+    events:
+      - *comfort_mode
+methods:
+  - name: ApplyComfortPreset
+    type: fire_and_forget
+    id: 0x0421
+    reliable: false
+    input_parameters:
+      - name: preset
+        datatype:
+          type: enum
+          name: ComfortPresetType
+          base_type:
+            type: uint8
+          entries:
+            - value: 0
+              name: eco
+            - value: 1
+              name: balanced
+            - value: 2
+              name: premium

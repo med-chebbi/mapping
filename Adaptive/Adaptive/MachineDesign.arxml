@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='utf-8'?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00049.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>RootMachineDesign</SHORT-NAME>
+      <ELEMENTS>
+        <AR-PACKAGE>
+          <SHORT-NAME>HardwareComponents</SHORT-NAME>
+          <ELEMENTS>
+            <MACHINE-DESIGN>
+              <SHORT-NAME>brake_control_unit</SHORT-NAME>
+              <COMMUNICATION-CONTROLLERS>
+                <ETHERNET-COMMUNICATION-CONTROLLER>
+                  <SHORT-NAME>brake_can_controller</SHORT-NAME>
+                  <ETHERNET-COMMUNICATION-CONTROLLER-VARIANTS>
+                    <ETHERNET-COMMUNICATION-CONTROLLER-CONDITIONAL />
+                  </ETHERNET-COMMUNICATION-CONTROLLER-VARIANTS>
+                </ETHERNET-COMMUNICATION-CONTROLLER>
+              </COMMUNICATION-CONTROLLERS>
+            </MACHINE-DESIGN>
+            <MACHINE-DESIGN>
+              <SHORT-NAME>cabin_experience_unit</SHORT-NAME>
+              <COMMUNICATION-CONTROLLERS>
+                <ETHERNET-COMMUNICATION-CONTROLLER>
+                  <SHORT-NAME>cabin_can_controller</SHORT-NAME>
+                  <ETHERNET-COMMUNICATION-CONTROLLER-VARIANTS>
+                    <ETHERNET-COMMUNICATION-CONTROLLER-CONDITIONAL />
+                  </ETHERNET-COMMUNICATION-CONTROLLER-VARIANTS>
+                </ETHERNET-COMMUNICATION-CONTROLLER>
+              </COMMUNICATION-CONTROLLERS>
+            </MACHINE-DESIGN>
+            <MACHINE-DESIGN>
+              <SHORT-NAME>domain_gateway</SHORT-NAME>
+              <COMMUNICATION-CONTROLLERS>
+                <ETHERNET-COMMUNICATION-CONTROLLER>
+                  <SHORT-NAME>gateway_chassis_controller</SHORT-NAME>
+                  <ETHERNET-COMMUNICATION-CONTROLLER-VARIANTS>
+                    <ETHERNET-COMMUNICATION-CONTROLLER-CONDITIONAL />
+                  </ETHERNET-COMMUNICATION-CONTROLLER-VARIANTS>
+                </ETHERNET-COMMUNICATION-CONTROLLER>
+                <ETHERNET-COMMUNICATION-CONTROLLER>
+                  <SHORT-NAME>gateway_comfort_controller</SHORT-NAME>
+                  <ETHERNET-COMMUNICATION-CONTROLLER-VARIANTS>
+                    <ETHERNET-COMMUNICATION-CONTROLLER-CONDITIONAL />
+                  </ETHERNET-COMMUNICATION-CONTROLLER-VARIANTS>
+                </ETHERNET-COMMUNICATION-CONTROLLER>
+                <ETHERNET-COMMUNICATION-CONTROLLER>
+                  <SHORT-NAME>gateway_ethernet_controller</SHORT-NAME>
+                  <ETHERNET-COMMUNICATION-CONTROLLER-VARIANTS>
+                    <ETHERNET-COMMUNICATION-CONTROLLER-CONDITIONAL />
+                  </ETHERNET-COMMUNICATION-CONTROLLER-VARIANTS>
+                </ETHERNET-COMMUNICATION-CONTROLLER>
+              </COMMUNICATION-CONTROLLERS>
+            </MACHINE-DESIGN>
+            <MACHINE-DESIGN>
+              <SHORT-NAME>perception_compute</SHORT-NAME>
+              <COMMUNICATION-CONTROLLERS>
+                <ETHERNET-COMMUNICATION-CONTROLLER>
+                  <SHORT-NAME>perception_service_controller</SHORT-NAME>
+                  <ETHERNET-COMMUNICATION-CONTROLLER-VARIANTS>
+                    <ETHERNET-COMMUNICATION-CONTROLLER-CONDITIONAL />
+                  </ETHERNET-COMMUNICATION-CONTROLLER-VARIANTS>
+                </ETHERNET-COMMUNICATION-CONTROLLER>
+              </COMMUNICATION-CONTROLLERS>
+            </MACHINE-DESIGN>
+          </ELEMENTS>
+        </AR-PACKAGE>
+      </ELEMENTS>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

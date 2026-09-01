@@ -1,0 +1,11 @@
+mac_address: 02:33:73:00:10:12
+mii_config:
+  type: sgmii
+  speed: 100
+  mode: mac
+virtual_interfaces:
+  - name: cabin_diagnostics_vlan
+    vlanid: 73
+    addresses:
+      - address: 172.24.73.12
+        ipv4netmask: 255.255.255.0

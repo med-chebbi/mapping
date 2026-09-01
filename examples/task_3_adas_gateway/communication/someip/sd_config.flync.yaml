@@ -1,0 +1,21 @@
+ip_address: 239.23.73.1
+port: 30492
+sd_timings:
+  - profile_id: task3_server_profile
+    initial_delay_min: 75
+    initial_delay_max: 180
+    repetitions_base_delay: 420
+    repetitions_max: 4
+    request_response_delay_min: 35
+    request_response_delay_max: 90
+    offer_cyclic_delay: 2
+    offer_ttl: 7
+  - profile_id: task3_client_profile
+    initial_delay_min: 65
+    initial_delay_max: 165
+    repetitions_base_delay: 380
+    repetitions_max: 4
+    request_response_delay_min: 30
+    request_response_delay_max: 85
+    find_ttl: 6
+    subscribe_ttl: 5

@@ -1,0 +1,9 @@
+connections:
+  - type: ecu_port_to_switch_port
+    id: perception_external_to_switch
+    ecu_port: perception_compute_eth_port
+    switch_port: perception_switch_external
+  - type: switch_port_to_controller_interface
+    id: perception_switch_to_controller
+    switch_port: perception_switch_host
+    controller_interface: perception_service_interface

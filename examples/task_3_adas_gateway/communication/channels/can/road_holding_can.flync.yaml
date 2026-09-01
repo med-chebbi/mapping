@@ -1,0 +1,29 @@
+name: RoadHoldingCAN
+description: Chassis-domain classical CAN network.
+version: "2.1"
+baud_rate: 500000
+frames:
+  - name: BrakeDynamicsFrame
+    type: can
+    length: 8
+    can_id: 0x311
+    id_format: standard_11bit
+    packed_pdus:
+      - pdu_ref: BrakeDynamicsPDU
+        bit_position: 0
+    timing:
+      cyclic_timings:
+        - cycle: 0.008
+      event_timings: []
+  - name: ChassisCommandFrame
+    type: can
+    length: 8
+    can_id: 0x352
+    id_format: standard_11bit
+    packed_pdus:
+      - pdu_ref: ChassisCommandMuxPDU
+        bit_position: 0
+    timing:
+      cyclic_timings:
+        - cycle: 0.016
+      event_timings: []

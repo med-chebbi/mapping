@@ -1,0 +1,7 @@
+bus_ref: RoadHoldingCAN
+sender_frames:
+  - bus_ref: RoadHoldingCAN
+    frame_ref: 0x311
+receiver_frames:
+  - bus_ref: RoadHoldingCAN
+    frame_ref: 0x352

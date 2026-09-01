@@ -1,0 +1,15 @@
+vlan_id: 73
+sockets:
+  - name: perception_sd_socket
+    endpoint_address: 172.23.73.20
+    endpoint_type: multicast
+    port_no: 30492
+    protocol: udp
+    multicast_tx:
+      - 239.23.73.1
+    deployments:
+      - deployment_type: someip_sd
+        multicast:
+          ip_address: 239.23.73.1
+          port: 30492
+          ip_ttl: 4

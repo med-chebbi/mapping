@@ -1,0 +1,5 @@
+connections:
+  - type: ecu_port_to_controller_interface
+    id: gateway_port_to_ethernet
+    ecu_port: domain_gateway_eth_port
+    controller_interface: gateway_service_interface
